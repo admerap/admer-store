@@ -1,16 +1,15 @@
-import { SearchIcon } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { SearchIcon } from "lucide-react"
+import { Input } from "@/components/ui/input"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui/select"
 
-import { APP_NAME } from "@/lib/constants";
-
-const categories = ['men', 'women', 'kids', 'accessories'];
+import { APP_NAME } from "@/lib/constants"
+const categories = ['men', 'women', 'kids', 'accessories']
 
 export default function Search() {
     return (
@@ -21,11 +20,13 @@ export default function Search() {
                 </SelectTrigger>
                 <SelectContent className="popper">
                     <SelectItem value="all">All</SelectItem>
-                    {categories.map((category) => (
-                        <SelectItem key={category} value={category}>
-                            {category}
-                        </SelectItem>
-                    ))}
+                    {
+                        categories.map((category) => (
+                            <SelectItem key={category} value={category}>
+                                {category}
+                            </SelectItem>
+                        ))
+                    }
                 </SelectContent>
             </Select>
             <Input
@@ -42,5 +43,5 @@ export default function Search() {
                 <SearchIcon className="w-5 h-5 text-gray-500 cursor-pointer" />
             </button>
         </form>
-    );
+    )
 }
